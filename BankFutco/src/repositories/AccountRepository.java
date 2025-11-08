@@ -50,15 +50,14 @@ public class AccountRepository {
 	}
 
 	public boolean deleteById(String accountNumber) {
-        //return findById(accountNumber).map(a-> storage.remove(a)).orElse(false);
-		return findById(accountNumber).map(storage::remove).orElse(false);
-        /*Optional<Account> account = findById(accountNumber);
+        Optional<Account> account = findById(accountNumber);
         if(account==null){
             return false;
         }
         else{
+            findById(accountNumber).map(a-> storage.remove(a)).orElse(false);
             return true;
-        }*/
+        }
 
 	}
 
